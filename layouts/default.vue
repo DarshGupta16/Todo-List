@@ -1,13 +1,24 @@
 <template>
   <div>
+    <NavBar />
     <Nuxt />
   </div>
 </template>
 
+<script lang="ts">
+import NavBar from '@/components/NavBar.vue'
+export default {
+  components: {
+    NavBar,
+  },
+}
+</script>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -15,6 +26,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  text-align: center;
 }
 
 *,
