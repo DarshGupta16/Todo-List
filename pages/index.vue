@@ -11,13 +11,14 @@
 <script lang="ts">
 export default {
   data() {
+    type todos = object[]
     return {
-      todos: ['My Todo List', 'Always remember to finish all your work'],
+      todos: [],
       todoInput: '',
     }
   },
   mounted() {
-    this.todos = JSON.parse(localStorage.getItem('todos')!)
+    this.todos = JSON.parse(localStorage.getItem('todos')!) || []
   },
   methods: {
     onSubmit() {
