@@ -5,7 +5,7 @@
     </nuxt-link>
     <div class="right">
       <nuxt-link to="/" class="link">My Todos</nuxt-link> &nbsp; |
-      <nuxt-link to="/done" class="link">Done Todos</nuxt-link>
+      <nuxt-link to="/done-todos" class="link">Done Todos</nuxt-link>
     </div>
   </div>
 </template>
