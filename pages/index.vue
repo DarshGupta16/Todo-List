@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>My Todos</h1>
-    <form @submit.prevent="onSubmit" style="padding-bottom: 10px">
+    <form style="padding-bottom: 10px" @submit.prevent="onSubmit">
       <input v-model="todoInput" type="text" class="input" />
       <input type="submit" value="Add Todo" class="btn" />
     </form>
@@ -75,8 +75,10 @@
 export default {
   data() {
     type todos = object[]
+    type doneTodos = object[]
     return {
       todos: [],
+      doneTodos: [],
       todoInput: '',
     }
   },
@@ -88,6 +90,15 @@ export default {
       this.todos.push(this.todoInput)
       localStorage.setItem('todos', JSON.stringify(this.todos))
       this.todoInput = ''
+    },
+    addDoneTodos(index: number) {
+      return this.doneTodos.push(this.todos.splice(index, 1))
+    },
+    editTodo(index: number) {
+      this.todoInput = this.todos.splice(index, 1)
+    },
+    deleteTodo(index: number) {
+      return this.todos.splice(index, 1)
     },
   },
   head() {
