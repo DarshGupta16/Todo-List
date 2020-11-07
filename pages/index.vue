@@ -47,7 +47,6 @@
 
 .btn-options {
   background-color: #eee;
-  font-size: 30px;
   border: none;
   border-radius: none;
   outline: none;
