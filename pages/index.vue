@@ -84,6 +84,7 @@ export default {
   },
   mounted() {
     this.todos = JSON.parse(localStorage.getItem('todos')!) || []
+    this.doneTodos = JSON.parse(localStorage.getItem('doneTodos')!) || []
   },
   methods: {
     onSubmit() {
@@ -92,13 +93,15 @@ export default {
       this.todoInput = ''
     },
     addDoneTodos(index: number) {
-      return this.doneTodos.push(this.todos.splice(index, 1))
+      this.doneTodos.push(this.todos.splice(index, 1))
+      localStorage.setItem('doneTodos', JSON.stringify(this.doneTodos))
     },
     editTodo(index: number) {
       this.todoInput = this.todos.splice(index, 1)
     },
     deleteTodo(index: number) {
-      return this.todos.splice(index, 1)
+      this.todos.splice(index, 1)
+      localStorage.setItem('todos', JSON.stringify(this.todos))
     },
   },
   head() {
