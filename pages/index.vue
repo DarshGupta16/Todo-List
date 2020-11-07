@@ -1,22 +1,24 @@
 <template>
   <div>
     <h1>My Todos</h1>
-    <form @submit.prevent="onSubmit">
+    <form @submit.prevent="onSubmit" style="padding-bottom: 10px">
       <input v-model="todoInput" type="text" class="input" />
       <input type="submit" value="Add Todo" class="btn" />
     </form>
-    <div class="todo-container" v-if="todos.length != 0">
-      <div class="todo-box" v-for="(todo, index) in todos" :key="index">
-        <h1>{{ todo }}</h1>
+    <div v-if="todos.length != 0" class="todo-container">
+      <div v-for="(todo, index) in todos" :key="index" class="todo-box">
+        <div class="title-container">
+          <h1 style="font-size: 20px">{{ todo }}</h1>
+        </div>
         <div class="options">
           <button class="btn-options" @click="addDoneTodos(index)">
-            Add to Done Todos
+            <i class="fas fa-check"></i>
           </button>
           <button class="btn-options" @click="editTodo(index)">
-            Edit Todo
+            <i class="far fa-edit"></i>
           </button>
           <button class="btn-options" @click="deleteTodo(index)">
-            Delete Todo
+            <i class="fas fa-trash"></i>
           </button>
         </div>
       </div>
@@ -26,6 +28,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
 
 .input {
   font-size: 30px;
@@ -47,11 +50,24 @@
 
 .btn-options {
   background-color: #eee;
+  font-size: 20px;
   border: none;
   border-radius: none;
   outline: none;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+}
+
+.todo-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.title-container {
+  width: 23%;
 }
 </style>
 
