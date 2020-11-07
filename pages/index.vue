@@ -5,6 +5,22 @@
       <input v-model="todoInput" type="text" class="input" />
       <input type="submit" value="Add Todo" class="btn" />
     </form>
+    <div class="todo-container" v-if="todos.length != 0">
+      <div class="todo-box" v-for="(todo, index) in todos" :key="index">
+        <h1>{{ todo }}</h1>
+        <div class="options">
+          <button class="btn-options" @click="addDoneTodos(index)">
+            Add to Done Todos
+          </button>
+          <button class="btn-options" @click="editTodo(index)">
+            Edit Todo
+          </button>
+          <button class="btn-options" @click="deleteTodo(index)">
+            Delete Todo
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,6 +41,16 @@
   border-radius: none;
   outline: none;
   background-color: #52de97;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.btn-options {
+  background-color: #eee;
+  font-size: 30px;
+  border: none;
+  border-radius: none;
+  outline: none;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
 }
