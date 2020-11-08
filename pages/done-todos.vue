@@ -22,6 +22,51 @@
   </div>
 </template>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+
+.input {
+  font-size: 30px;
+  border: 1px solid black;
+  border-radius: none;
+  outline: none;
+  width: 500px;
+}
+
+.btn {
+  font-size: 30px;
+  border: none;
+  border-radius: none;
+  outline: none;
+  background-color: #52de97;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.btn-options {
+  background-color: #eee;
+  font-size: 20px;
+  border: none;
+  border-radius: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.todo-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.title-container {
+  width: 5%;
+}
+</style>
+
 <script>
 export default {
   head() {
