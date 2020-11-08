@@ -98,6 +98,19 @@ export default {
         alert('Value entered is invalid.')
       }
     },
+    async deleteAllTodos() {
+      const confirmation = await prompt(
+        'Are you sure you want to delete all done todos? Warning: this action is irreverible! Write Yes or No',
+        'Yes'
+      )
+      if (confirmation.toLowerCase() === 'yes') {
+        this.doneTodos = []
+        localStorage.setItem('doneTodos', JSON.stringify(this.todos))
+      } else if (confirmation.toLowerCase() === 'no') {
+      } else {
+        alert('Value entered is invalid.')
+      }
+    },
   },
   head() {
     return {

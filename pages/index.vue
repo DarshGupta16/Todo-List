@@ -22,6 +22,9 @@
           </button>
         </div>
       </div>
+      <button class="btn-options" @click="deleteAllTodos">
+        Delete all Todos
+      </button>
     </div>
   </div>
 </template>
@@ -108,6 +111,19 @@ export default {
       )
       if (confirmation.toLowerCase() === 'yes') {
         this.todos.splice(index, 1)
+        localStorage.setItem('todos', JSON.stringify(this.todos))
+      } else if (confirmation.toLowerCase() === 'no') {
+      } else {
+        alert('Value entered is invalid.')
+      }
+    },
+    async deleteAllTodos() {
+      const confirmation = await prompt(
+        'Are you sure you want to delete all todos? Warning: this action is irreverible! Write Yes or No',
+        'Yes'
+      )
+      if (confirmation.toLowerCase() === 'yes') {
+        this.todos = []
         localStorage.setItem('todos', JSON.stringify(this.todos))
       } else if (confirmation.toLowerCase() === 'no') {
       } else {
