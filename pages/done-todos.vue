@@ -1,7 +1,10 @@
 <template>
   <div>
-    <h1>Done Todos</h1>
-    <div v-if="doneTodos.length != 0" class="todo-container">
+    <h1 class="animated fadeInRight">Done Todos</h1>
+    <div
+      v-if="doneTodos.length != 0"
+      class="todo-container animated fadeInLeft"
+    >
       <div v-for="(todo, index) in doneTodos" :key="index" class="todo-box">
         <div class="title-container">
           <h1 style="font-size: 20px">{{ todo }}</h1>
@@ -63,7 +66,7 @@ export default {
       )
       if (confirmation.toLowerCase() === 'yes') {
         this.doneTodos = []
-        localStorage.setItem('doneTodos', JSON.stringify(this.todos))
+        localStorage.setItem('doneTodos', JSON.stringify(this.doneTodos))
       } else if (confirmation.toLowerCase() === 'no') {
       } else {
         alert('Value entered is invalid.')

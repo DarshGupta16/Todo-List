@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="animated lightSpeedInRight">My Todos</h1>
+    <h1 class="animated fadeInRight">My Todos</h1>
     <form
       style="padding-bottom: 10px"
-      class="animated lightSpeedInLeft"
+      class="animated fadeInLeft"
       @submit.prevent="onSubmit"
     >
       <input v-model="todoInput" type="text" class="input" />
