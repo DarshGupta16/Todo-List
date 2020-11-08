@@ -31,43 +31,6 @@
   </div>
 </template>
 
-<style>
-@keyframes fade {
-  0% {
-    transform: rotate(0) translateX(-100px);
-    opacity: 0;
-  }
-  12% {
-    transform: rotate(0) translateX(-80px);
-    opacity: 0.2;
-  }
-  25% {
-    transform: rotate(0) translateX(-60px);
-    opacity: 0.4;
-  }
-  41% {
-    transform: rotate(0) translateX(-40px);
-    opacity: 0.6;
-  }
-  63% {
-    transform: rotate(0) translateX(-20px);
-    opacity: 0.8;
-  }
-  85% {
-    transform: rotate(0) translateX(0px);
-    opacity: 0.9;
-  }
-  100% {
-    transform: rotate(0) translateX(0px);
-    opacity: 1;
-  }
-}
-
-.elementToAnimate {
-  animation: yourAnimation 1s 1 0s linear;
-}
-</style>
-
 <script>
 export default {
   transition: 'fade',
