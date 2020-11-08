@@ -78,7 +78,10 @@ export default {
   },
   methods: {
     restoreTodo(index) {
-      this.todos.push(this.doneTodos.splice(index, 1))
+      const item = this.doneTodos.splice(index, 1)
+      item.forEach((i) => {
+        this.todos.push(i)
+      })
       localStorage.setItem('todos', JSON.stringify(this.todos))
       localStorage.setItem('doneTodos', JSON.stringify(this.doneTodos))
     },
