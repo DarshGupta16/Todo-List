@@ -15,6 +15,9 @@
           </button>
         </div>
       </div>
+      <button class="btn-options" @click="deleteAllTodos">
+        Delete all Todos
+      </button>
     </div>
   </div>
 </template>
