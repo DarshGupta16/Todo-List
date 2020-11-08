@@ -106,10 +106,10 @@ export default {
         'Are you sure you want to delete this todo? Warning: this action is irreverible! Write Yes or No',
         'Yes'
       )
-      if (confirmation.toLowerCase === 'yes') {
+      if (confirmation.toLowerCase() === 'yes') {
         this.todos.splice(index, 1)
         localStorage.setItem('todos', JSON.stringify(this.todos))
-      } else if (confirmation.toLowerCase === 'no') {
+      } else if (confirmation.toLowerCase() === 'no') {
       } else {
         alert('Value entered is invalid.')
       }
