@@ -1,26 +1,28 @@
 <template>
   <div>
-    <h1 class="animated fadeInRight">Done Todos</h1>
-    <div
-      v-if="doneTodos.length != 0"
-      class="todo-container animated fadeInLeft"
-    >
-      <div v-for="(todo, index) in doneTodos" :key="index" class="todo-box">
-        <div class="title-container">
-          <h1 style="font-size: 20px">{{ todo }}</h1>
-        </div>
-        <div class="options">
-          <button class="btn-options" @click="restoreTodo(index)">
-            <i class="fas fa-undo"></i>
-          </button>
-          <button class="btn-options" @click="deleteTodo(index)">
-            <i class="fas fa-trash"></i>
-          </button>
+    <h1>Done Todos</h1>
+    <div v-if="doneTodos.length != 0">
+      <div class="todo-container">
+        <div v-for="(todo, index) in doneTodos" :key="index" class="todo-box">
+          <div class="title-container">
+            <h1 style="font-size: 20px">{{ todo }}</h1>
+          </div>
+          <div class="options">
+            <button class="btn-options" @click="restoreTodo(index)">
+              <i class="fas fa-undo"></i>
+            </button>
+            <button class="btn-options" @click="deleteTodo(index)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
         </div>
       </div>
       <button class="btn-options" @click="deleteAllTodos">
         Delete all Todos
       </button>
+    </div>
+    <div v-else>
+      <p>No todos done yet</p>
     </div>
   </div>
 </template>
