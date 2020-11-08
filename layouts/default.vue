@@ -1,6 +1,8 @@
 <template>
-  <NavBar />
-  <Nuxt />
+  <div>
+    <NavBar />
+    <Nuxt />
+  </div>
 </template>
 
 <script lang="ts">
