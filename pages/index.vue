@@ -1,12 +1,20 @@
 <template>
   <div>
-    <h1>My Todos</h1>
-    <form style="padding-bottom: 10px" @submit.prevent="onSubmit">
+    <h1 class="animated lightSpeedInRight">My Todos</h1>
+    <form
+      style="padding-bottom: 10px"
+      class="animated lightSpeedInLeft"
+      @submit.prevent="onSubmit"
+    >
       <input v-model="todoInput" type="text" class="input" />
       <button type="submit" class="btn">Add Todo</button>
     </form>
-    <div v-if="todos.length != 0" class="todo-container">
-      <div v-for="(todo, index) in todos" :key="index" class="todo-box">
+    <div v-if="todos.length != 0" class="todo-container animated fadeInUpBig">
+      <div
+        v-for="(todo, index) in todos"
+        :key="index"
+        class="todo-box animated fadeInUp"
+      >
         <div class="title-container">
           <h1 style="font-size: 20px">{{ todo }}</h1>
         </div>

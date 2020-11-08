@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <NavBar />
-    <Nuxt />
-  </div>
+  <NavBar />
+  <Nuxt />
 </template>
 
 <script lang="ts">
@@ -28,8 +26,8 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css');
 
 html {
   font-family: 'Montserrat', sans-serif;
@@ -117,5 +115,9 @@ html {
 
 .title-container {
   width: 5%;
+}
+
+.animated {
+  animation-duration: 2s;
 }
 </style>
