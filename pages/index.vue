@@ -3,7 +3,7 @@
     <h1>My Todos</h1>
     <form style="padding-bottom: 10px" @submit.prevent="onSubmit">
       <input v-model="todoInput" type="text" class="input" />
-      <input type="submit" value="Add Todo" class="btn" />
+      <button type="submit" class="btn">Add Todo</button>
     </form>
     <div v-if="todos.length != 0" class="todo-container">
       <div v-for="(todo, index) in todos" :key="index" class="todo-box">
@@ -67,15 +67,13 @@
 }
 
 .title-container {
-  width: 23%;
+  width: 5%;
 }
 </style>
 
-<script lang="ts">
+<script>
 export default {
   data() {
-    type todos = object[]
-    type doneTodos = object[]
     return {
       todos: [],
       doneTodos: [],
@@ -83,8 +81,8 @@ export default {
     }
   },
   mounted() {
-    this.todos = JSON.parse(localStorage.getItem('todos')!) || []
-    this.doneTodos = JSON.parse(localStorage.getItem('doneTodos')!) || []
+    this.todos = JSON.parse(localStorage.getItem('todos')) || []
+    this.doneTodos = JSON.parse(localStorage.getItem('doneTodos')) || []
   },
   methods: {
     onSubmit() {
@@ -92,14 +90,14 @@ export default {
       localStorage.setItem('todos', JSON.stringify(this.todos))
       this.todoInput = ''
     },
-    addDoneTodos(index: number) {
+    addDoneTodos(index) {
       this.doneTodos.push(this.todos.splice(index, 1))
       localStorage.setItem('doneTodos', JSON.stringify(this.doneTodos))
     },
-    editTodo(index: number) {
+    editTodo(index) {
       this.todoInput = this.todos.splice(index, 1)
     },
-    deleteTodo(index: number) {
+    deleteTodo(index) {
       this.todos.splice(index, 1)
       localStorage.setItem('todos', JSON.stringify(this.todos))
     },
